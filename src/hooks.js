@@ -14,8 +14,8 @@ const useHover = () => {
 
     useEffect(() => {
         const refCopy = ref;
-        refCopy.current.addEventListener("mouseEnter", () => setHovered(true));
-        refCopy.current.addEventListener("mouseleave", () => setHovered(false));
+        refCopy.current.addEventListener("mouseEnter", () => enter);
+        refCopy.current.addEventListener("mouseleave", () => leave);
         return () => {
             refCopy.current.removeEventListener("mouseenter", enter);
             refCopy.current.removeEventListener("mouseleave", leave);
