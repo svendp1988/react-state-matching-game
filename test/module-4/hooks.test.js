@@ -67,6 +67,7 @@ describe('Building a custom hook', () => {
     try {
       [ref, _] = useHover()
       anon = React.useEffect.mock.calls[0][0]
+      console.log(anon.toString());
       anotherAnon = anon()
       name = anotherAnon.name
     } catch(error) {}
@@ -77,6 +78,8 @@ describe('Building a custom hook', () => {
   })
 
   it('registers a mouseenter event listener @on-mouse-enter', () => {
+    useHover();
+    React.useEffect.mock.calls[0][0]();
 
     expect(mockRef.current.addEventListener, 'Did you add the right event listener?').toHaveBeenCalledWith('mouseenter', expect.any(Function))
   })

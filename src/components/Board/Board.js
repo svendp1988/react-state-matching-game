@@ -1,6 +1,7 @@
 import React from 'react'
 import './Board.css';
 import Tile from "../Tile";
+import PropTypes from "prop-types";
 
 const Board = (props) => {
   /* Module 2: why spread the tile here?
@@ -23,5 +24,6 @@ const Board = (props) => {
     </div>
   )
 }
+
 
 export default Board
